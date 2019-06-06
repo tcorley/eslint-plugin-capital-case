@@ -25,6 +25,11 @@ ruleTester.run('const-uppercase', rule, {
             errors: [{TYPE, message: msg.lower}]
         },
         {
+            code: "const foo = []",
+            options: [{forceDataType: true}],
+            errors: [{TYPE, message: msg.upper}]
+        },
+        {
             code: "const FOO = {}",
             errors: [{TYPE, message: msg.lower}]
         },
@@ -129,6 +134,11 @@ ruleTester.run('const-uppercase', rule, {
             errors: [{TYPE, message: msg.lower}]
         },
         {
+            code: "const foo = 2 * 2",
+            options: [{forceDataType: true}],
+            errors: [{TYPE, message: msg.upper}]
+        },
+        {
             code: "const FOO = 2 * 2 * 10",
             errors: [{TYPE, message: msg.lower}]
         },
@@ -177,6 +187,14 @@ ruleTester.run('const-uppercase', rule, {
         "const foo = require(bar)",
         "const FOO = require(bar)",
         "const _ = 'foo'",
-        "const $ = 'bar'"
+        "const $ = 'bar'",
+        {
+            code: "const FOO = `bar ${baz} qbar`",
+            options: [{forceDataType: true}]
+        },
+        {
+            code: "const FOO_BAR = {bar: 42, baz: {qux: 'quux'}}",
+            options: [{forceDataType: true}]
+        }
     ]
 });

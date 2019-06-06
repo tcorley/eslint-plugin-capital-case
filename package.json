@@ -1,16 +1,16 @@
 {
-  "name": "eslint-plugin-const-case",
-  "version": "1.0.4",
-  "description": "Check for const case",
+  "name": "eslint-plugin-capital-case",
+  "version": "0.0.0-alpha",
+  "description": "Check for capital case",
   "keywords": [
     "eslint",
     "eslint-plugin",
     "eslintplugin"
   ],
   "maintainers": [
-    "Kirill Molchanov <k03.mad@gmail.com"
+    "Tyler Corley tyler_corley@me.com"
   ],
-  "repository": "k03mad/eslint-plugin-const-case",
+  "repository": "tcorley/eslint-plugin-capital-case",
   "engines": {
     "node": ">=6"
   },

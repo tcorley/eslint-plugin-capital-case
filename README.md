@@ -1,31 +1,33 @@
-[![NPM](https://nodei.co/npm/eslint-plugin-const-case.png?downloads=true&stars=true)](https://nodei.co/npm/eslint-plugin-const-case/)
-
-[![dependencies Status](https://david-dm.org/k03mad/eslint-plugin-const-case/status.svg)](https://david-dm.org/k03mad/eslint-plugin-const-case)
+# eslint-plugin-capital-case
 
 ## Installation
 
 ```
-$ npm i eslint eslint-plugin-const-case --save-dev
+$ npm i eslint eslint-plugin-capital-case --save-dev
 ```
 
 ## Usage
 
-Add `const-case` to the `.eslintrc` configuration file.
+Add `capital-case` to the `.eslintrc` configuration file.
 
 ```js
 {
     'plugins': [
-        'const-case'
+        'capital-case'
     ],
     'rules': {
-        'const-case/uppercase': 'error'
+        'capital-case/uppercase': 'error'
+    }
+    
+    // if you want uppercase everything
+    
+    'rules': {
+        'capital-case/uppercase': [2, {forceDataType: true}]
     }
 }
 ```
 
 ## Rule Details
-
-**WARNING! From 1.0.0 only literals should be in UPPER_CASE.**
 
 Examples of correct code for this rule:
 
@@ -44,6 +46,17 @@ const foo = bar.baz();
 const foo = bar => baz;
 const foo = {bar: baz};
 const foo = [bar, baz, 42];
-```
 
-[Correct code for 0.5.2 version.](https://github.com/k03mad/eslint-plugin-const-case/blob/be8654452ba0c636f152f2091cc4f09fdd4da65b/README.md)
+// { forceDataType: true }
+
+const FOO_BAR_BAZ = ['bar', 42];
+const FOO_BAR_BAZ = {bar: 42, baz: 'qux'};
+const FOO_BAR_BAZ = 1000 * 60 * 10;
+const FOO_BAR_BAZ = `42 ${bar}`;
+const FOO_BAR_BAZ = bar();
+const FOO_BAR_BAZ = bar ? baz : 42;
+const FOO_BAR_BAZ = bar.baz();
+const FOO_BAR_BAZ = bar => baz;
+const FOO_BAR_BAZ = {bar: baz};
+const FOO_BAR_BAZ = [bar, baz, 42];
+```
