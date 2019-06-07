@@ -24,6 +24,12 @@ Add `capital-case` to the `.eslintrc` configuration file.
     'rules': {
         'capital-case/uppercase': [2, {forceDataType: true}]
     }
+
+    // if you want Objects and Arrays but are using `Object.freeze()` for immutability
+
+    'rules': {
+        'capital-case/uppercase': [2, {forceFrozen: true}]
+    }
 }
 ```
 
@@ -59,4 +65,11 @@ const FOO_BAR_BAZ = bar.baz();
 const FOO_BAR_BAZ = bar => baz;
 const FOO_BAR_BAZ = {bar: baz};
 const FOO_BAR_BAZ = [bar, baz, 42];
+
+// { forceFrozen: true }
+
+const FOO_BAR_BAZ =Object.freeze(['bar', 42]);
+const FOO_BAR_BAZ =Object.freeze({bar: 42, baz: 'qux'});
+const FOO_BAR_BAZ =Object.freeze({bar: baz});
+const FOO_BAR_BAZ =Object.freeze([bar, baz, 42]);
 ```

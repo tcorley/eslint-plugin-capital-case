@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-capital-case",
-  "version": "0.0.0-alpha",
+  "version": "0.0.1-alpha",
   "description": "Check for capital case",
   "keywords": [
     "eslint",
@@ -19,7 +19,7 @@
     "requireindex": "1.2.0"
   },
   "devDependencies": {
-    "eslint": "4.19.1",
+    "eslint": "5.16.0",
     "eslint-config-k03mad": "0.2.6",
     "eslint-plugin-const-case": "1.0.3",
     "eslint-plugin-node": "6.0.1",
